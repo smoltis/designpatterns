@@ -28,14 +28,20 @@ namespace Decorator
 
         static void Main(string[] args)
         {
+            //plain Espresso
             Beverage beverage = new Espresso();
-            Console.WriteLine($"{beverage.Description} @ {beverage.Cost()}");
+            Console.WriteLine($"{beverage.GetDescription()} ${beverage.Cost()}");
 
+            //Fancy Flat White
             Beverage beverage1 = new FlatWhite();
             beverage1 = new SoyMilk(beverage1);
             beverage1 = new Syrup(beverage1);
+            Console.WriteLine($"{beverage1.GetDescription()}  ${beverage1.Cost()}");
 
-            Console.WriteLine($"{beverage1.GetDescription()} @ {beverage1.Cost()}");
+            //Iced Espresso
+            Beverage beverage2 = new Espresso();
+            beverage2 = new Ice(beverage2);
+            Console.WriteLine($"{beverage2.GetDescription()} ${beverage2.Cost()}");
 
             Console.ReadLine();
         }

@@ -1,14 +1,13 @@
 ﻿namespace Decorator
 {
-    public class Syrup : CondimentDecorator
+    public class Syrup : CondimentDecorator //concrete decorator
     {
-        private Beverage beverage;
 
-        public Syrup(Beverage beverage)
+        public Syrup(Beverage beverage) : base(beverage)
         {
-            this.beverage = beverage;
+
         }
-        public new string GetDescription()
+        public override string GetDescription()
         {
             return string.Join(", ", beverage.GetDescription(), "Syrup");
         }

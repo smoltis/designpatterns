@@ -1,6 +1,6 @@
 ﻿namespace Decorator
 {
-    public class FlatWhite : Beverage
+    public class FlatWhite : Beverage //concrete component
     {
         public FlatWhite()
         {

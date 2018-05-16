@@ -1,14 +1,14 @@
 ﻿namespace Decorator
 {
-    public abstract class Beverage
+    public abstract class Beverage //component
     {
-        public string Description = "Unknown beverage";
+        protected string Description = "Unknown beverage";
 
-        public string GetDescription()
+        public abstract double Cost();
+
+        public virtual string GetDescription()
         {
             return Description;
         }
-
-        public abstract double Cost();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Decorator
 {
-    public class Capuccino : Beverage
+    public class Capuccino : Beverage //concrete component
     {
         public Capuccino()
         {

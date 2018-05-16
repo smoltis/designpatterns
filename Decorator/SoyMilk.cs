@@ -1,22 +1,20 @@
 ﻿namespace Decorator
 {
-    public class SoyMilk : CondimentDecorator
+    public class SoyMilk : CondimentDecorator //concrete decorator
     {
-        private readonly Beverage _beverage;
 
-        public SoyMilk(Beverage beverage)
+        public SoyMilk(Beverage beverage) : base(beverage)
         {
-            _beverage = beverage;
         }
 
-        public new string GetDescription()
+        public override string GetDescription()
         {
-            return string.Join(", ", _beverage.GetDescription(), "Soy Milk");
+            return string.Join(", ", beverage.GetDescription(), "Soy Milk");
         }
 
         public override double Cost()
         {
-            return 0.5 + _beverage.Cost();
+            return 0.5 + beverage.Cost();
         }
     }
 }
