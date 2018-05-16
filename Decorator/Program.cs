@@ -43,6 +43,13 @@ namespace Decorator
             beverage2 = new Ice(beverage2);
             Console.WriteLine($"{beverage2.GetDescription()} ${beverage2.Cost()}");
 
+            //Capuccino with everything
+            Beverage cap = new Capuccino();
+            cap = new SoyMilk(cap);
+            cap = new Syrup(cap);
+            cap = new Ice(cap);
+            Console.WriteLine($"{cap.GetDescription()} ${cap.Cost()}");
+
             Console.ReadLine();
         }
     }
