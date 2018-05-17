@@ -2,7 +2,7 @@
 
 namespace Observer
 {
-    public class ForecastDisplay : IObserver, IDisplayElement
+    public class ForecastDisplay : IObserver, IDisplayElement //Concrete Observer
     {
         private double _currentPressure = 29.2;
         private double _lastPressure;

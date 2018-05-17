@@ -21,7 +21,7 @@ namespace Observer
              * -Subjests and Observers are "loosely coupled"
              * -Strive for loosely coupled designs between objects that interact. (Design Principle #4)
              *
-             * Implementation:
+             * Implementation (Push):
              *
              * We define 3 interfaces:
              *  -ISubject (implemented by publisher, stores the list of subscribers, notifies on updates)
@@ -41,16 +41,17 @@ namespace Observer
              * 
              */
 
-            //create subject(publisher)
+            //create concrete subject(publisher)
             WeatherData weatherData = new WeatherData();
 
             //create Observer(subscriber) and register with Subject(publisher)
-            CurrentConditionsDisplay currentConditions = new CurrentConditionsDisplay(weatherData);
+            CurrentConditionsDisplay currentConditions = new CurrentConditionsDisplay(weatherData); //subscribe in constructor of observer(subscriber), PUSH subscription
             //create more Observers(subscribers)
-            StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+            weatherData.RegisterObserver(new StatisticsDisplay(weatherData)); //subscribe in method of subject(publisher), PULL subscription
+
             ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
 
-            //change data at Subject(publisher), simulate new data from sensors
+            //refresh data at Subject(publisher), simulate new data from sensors
             weatherData.SetMeasurements(new Data()
             {
                 Temp = 80,

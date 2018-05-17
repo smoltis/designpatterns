@@ -3,7 +3,7 @@ using System.Threading.Tasks.Dataflow;
 
 namespace Observer
 {
-    public class WeatherData : ISubject
+    public class WeatherData : ISubject //concrete subject
     {
         private readonly List<IObserver> _observers; //we'll maintain this list of subscribers
 

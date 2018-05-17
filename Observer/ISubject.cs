@@ -1,6 +1,6 @@
 ﻿namespace Observer
 {
-    public interface ISubject
+    public interface ISubject //Subject
     {
         void RegisterObserver(IObserver o);
         void RemoveObserver(IObserver o);

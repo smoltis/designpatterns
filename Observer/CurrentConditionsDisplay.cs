@@ -2,7 +2,7 @@
 
 namespace Observer
 {
-    public class CurrentConditionsDisplay : IObserver, IDisplayElement
+    public class CurrentConditionsDisplay : IObserver, IDisplayElement //Concrete Observer
     {
         private IData _data;
         public CurrentConditionsDisplay(ISubject weatherData)
