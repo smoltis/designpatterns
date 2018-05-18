@@ -13,6 +13,7 @@ namespace State
         public void Dispense()
         {
             gumballMachine.ReleaseBall();
+
             if (gumballMachine.GetCount() > 0)
             {
                 gumballMachine.SetState(gumballMachine.GetNoQuarterState());
